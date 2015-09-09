@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_with_art">
+    
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_above="@+id/right_icon">
+
+        <RelativeLayout
+            android:id="@+id/rel1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="40dp"
+                android:layout_toRightOf="@+id/imageView1"
+                android:text="BOOK"
+                android:textColor="#323232"
+                android:textSize="45dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageView1"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/imageView1"
+                android:text="KOOK"
+                android:textColor="#EF4124"
+                android:textSize="45dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+    
+    <ImageView
+        android:id="@+id/right_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/thankyou"
+        android:padding="10dp"
+        android:src="@drawable/right_icon"/>
+    
+    <TextView
+        android:id="@+id/thankyou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Thank You"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/kookbook_text_orrange" />
+    
+    <TextView
+        android:id="@+id/orderId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/thankyou"
+        android:text="ORDER ID : OD234"
+        android:gravity="center"
+        android:textSize="13dp"
+        android:background="@drawable/couponcode_bg"
+        android:textColor="@color/kookbook_text_orrange" />
+    
+    <TextView
+        android:id="@+id/received_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/orderId"
+        android:text="We have received your order."
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:textColor="@color/kookbook_text_dark_gray" />
+    <TextView
+        android:id="@+id/delivered_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/received_msg"
+        android:text="Your parcel will be delivered shortly"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:textColor="@color/kookbook_text_dark_gray" />
+    <TextView
+        android:id="@+id/confirmation_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/delivered_msg"
+        android:text="You will receive the confirmation via SMS and Email"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:textSize="13dp"
+        android:textColor="@color/kookbook_text_lite_gray" />
+    
+    <ImageView
+        android:id="@+id/orderStatus_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/confirmation_msg"
+        android:src="@drawable/view_order_status" />
+    
+
+</RelativeLayout>

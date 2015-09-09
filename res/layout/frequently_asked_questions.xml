@@ -1,0 +1,403 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_with_art" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/kookbook_text_orrange"
+        android:padding="15dp" >
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/white_back_btn" />
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/back_btn"
+            android:paddingLeft="10dp"
+            android:text="Frequently Asked Questions"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/White" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/deliveryscroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header" >
+
+        <RelativeLayout
+            android:id="@+id/mainrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout
+                android:id="@+id/faqs_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp" >
+
+                <TextView
+                    android:id="@+id/faqs_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="FAQ&apos;s - kookbook.com"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_dark_gray"
+                    android:textSize="17dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/general_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/faqs_rel" >
+
+                <TextView
+                    android:id="@+id/general_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="General"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_lite_gray"
+                    android:textSize="13dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/question1_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/general_rel"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/bullet_img_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="&#8226;"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_orrange"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/question1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/bullet_img_1"
+                    android:gravity="center"
+                    android:text="What is kookbook?"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/answer1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/question1"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/bullet_img_1"
+                    android:text="Kookbook.com is india's first fully functional Online Restaurant Booking application. With this,you can have the choice of booking a specific table in a particular restaurant of your choice, at your preferred time and on a date that is convenient to you."
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_dark_gray"
+                    android:textSize="11dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/question2_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/question1_rel"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/bullet_img_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="&#8226;"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_orrange"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/question2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/bullet_img_2"
+                    android:gravity="center"
+                    android:text="Why is kookbook?"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/answer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/question2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/bullet_img_2"
+                    android:text="@string/Answer2"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_dark_gray"
+                    android:textSize="11dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/payment_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/question2_rel"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/payment_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="Payment"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_lite_gray"
+                    android:textSize="13dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/question3_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/payment_rel" >
+
+                <TextView
+                    android:id="@+id/bullet_img_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center"
+                    android:text="&#8226;"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_orrange"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/question3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/bullet_img_3"
+                    android:gravity="center"
+                    android:text="How do I get an itemized bill for the meal?"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/answer3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/question3"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/bullet_img_3"
+                    android:text="@string/Answer3"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_dark_gray"
+                    android:textSize="11dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/question4_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/question3_rel"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/bullet_img_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:text="&#8226;"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_orrange"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/question4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/bullet_img_4"
+                    android:gravity="center"
+                    android:text="Why is kookbook?"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/answer4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/question4"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/bullet_img_4"
+                    android:text="@string/Answer2"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_dark_gray"
+                    android:textSize="11dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/delivery_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/question4_rel" >
+
+                <TextView
+                    android:id="@+id/delivery_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:text="Delivry"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_lite_gray"
+                    android:textSize="13dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/question5_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/delivery_rel"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/bullet_img_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="&#8226;"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_orrange"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/question5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/bullet_img_5"
+                    android:gravity="center"
+                    android:text="How do I get an itemized bill for the meal?"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/answer5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/question5"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/bullet_img_5"
+                    android:text="@string/Answer3"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_dark_gray"
+                    android:textSize="11dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/question6_rel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/question5_rel"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/bullet_img_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="&#8226;"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_orrange"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/question6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/bullet_img_6"
+                    android:gravity="center"
+                    android:text="Why is kookbook?"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/answer6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/question6"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/bullet_img_6"
+                    android:text="@string/Answer2"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/kookbook_text_dark_gray"
+                    android:textSize="11dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

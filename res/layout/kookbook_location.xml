@@ -1,0 +1,106 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_with_art" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/textfield_search_right_default_holo_light"
+        android:padding="10dp" >
+
+        <ImageView
+            android:id="@+id/location_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/back_btn" />
+
+        <EditText
+            android:id="@+id/heading"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/location_icon"
+            android:paddingLeft="10dp"
+            android:hint="Enter your location,Zipcode or Restaurant"
+            android:textColorHint="#ACACAC"
+            android:textSize="13dp"
+            android:textColor="@android:color/black" />
+
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/relLocation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/header"
+        android:padding="10dp" >
+
+        <ImageView
+            android:id="@+id/Mylocation_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/use_my_location" />
+
+        <EditText
+            android:id="@+id/UseMyLocation"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/Mylocation_icon"
+            android:hint="Use my location"
+            android:textColorHint="#696969"
+            android:background="@drawable/textfield_search_right_default_holo_light"
+            android:textSize="15dp"
+            android:textColor="@android:color/black" />
+
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/rel2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relLocation"
+        android:layout_marginTop="10dp"
+        android:padding="10dp" >
+
+        <ImageView
+            android:id="@+id/ghodbunder_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/ghodbunder" />
+
+        <EditText
+            android:id="@+id/Ghodbunder_Rd"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/ghodbunder_icon"
+            android:hint="Ghodbunder Rd"
+            android:textColorHint="#696969"
+            android:background="@drawable/textfield_search_right_default_holo_light"
+            android:textSize="15dp"
+            android:textColor="@android:color/black" />
+
+        
+    </RelativeLayout>
+
+</RelativeLayout>

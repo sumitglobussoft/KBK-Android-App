@@ -1,0 +1,168 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_with_art" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/kookbook_text_orrange"
+        android:padding="15dp" >
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/white_back_btn" />
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/back_btn"
+            android:layout_marginLeft="10dp"
+            android:text="Settings"
+            android:textColor="@color/White" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/about_kookbook_rel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:background="@drawable/textfield_search_right_default_holo_light"
+        android:layout_marginRight="80dp"
+        android:padding="15dp" >
+
+        <ImageView
+            android:id="@+id/about_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/about" />
+
+        <TextView
+            android:id="@+id/about_kookbook_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/about_icon"
+            android:layout_marginLeft="19dp"
+            android:text="About kookbook"
+            android:textColor="@color/kookbook_text_dark_gray" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/change_pwd_rel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/about_kookbook_rel"
+        android:background="@drawable/textfield_search_right_default_holo_light"
+        android:layout_marginRight="80dp"
+        android:padding="15dp" >
+
+        <ImageView
+            android:id="@+id/password_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/change_password" />
+
+        <TextView
+            android:id="@+id/change_pwd_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/password_icon"
+            android:layout_marginLeft="19dp"
+            android:text="Change Password"
+            android:textColor="@color/kookbook_text_dark_gray" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/contact_us_rel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/change_pwd_rel"
+        android:background="@drawable/textfield_search_right_default_holo_light"
+        android:layout_marginRight="80dp"
+        android:padding="15dp" >
+
+        <ImageView
+            android:id="@+id/contact_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/contact_us" />
+
+        <TextView
+            android:id="@+id/contact_us_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/contact_icon"
+            android:layout_marginLeft="19dp"
+            android:text="Contact Us"
+            android:textColor="@color/kookbook_text_dark_gray" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/tc_rel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contact_us_rel"
+        android:background="@drawable/textfield_search_right_default_holo_light"
+        android:layout_marginRight="80dp"
+        android:padding="15dp" >
+
+        <ImageView
+            android:id="@+id/tc_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/terms" />
+
+        <TextView
+            android:id="@+id/tc_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tc_icon"
+            android:layout_marginLeft="19dp"
+            android:text="Terms &amp; Conditions"
+            android:textColor="@color/kookbook_text_dark_gray" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/privacy_policy_rel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tc_rel"
+        android:background="@drawable/textfield_search_right_default_holo_light"
+        android:layout_marginRight="80dp"
+        android:padding="15dp" >
+
+        <ImageView
+            android:id="@+id/privacy_policy_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/privacy" />
+
+        <TextView
+            android:id="@+id/privacy_policy_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/privacy_policy_icon"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="19dp"
+            android:text="Privacy Policy"
+            android:textColor="@color/kookbook_text_dark_gray" />
+    </RelativeLayout>
+    
+
+</RelativeLayout>

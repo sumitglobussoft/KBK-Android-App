@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_shape"
+    android:padding="10dp"
+    android:orientation="vertical" >
+
+    <ImageView
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/circle" />
+
+        <TextView
+            android:id="@+id/item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/radio1"
+            android:text="Prawns Biryani"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:textSize="13dp" />
+        
+        <TextView
+            android:id="@+id/add_extra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="ADD EXTRA"
+            android:textColor="@color/kookbook_text_green"
+            android:textSize="10dp" />
+        
+        <ImageView
+            android:id="@+id/minus_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/item"
+            android:layout_toRightOf="@+id/radio1"
+            android:background="@drawable/minus_btn" />
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/item"
+            android:text="2"
+            android:gravity="center"
+            android:textSize="10dp"
+            android:textColor="@color/kookbook_text_orrange"
+            android:layout_toRightOf="@+id/minus_btn"
+            android:background="@drawable/point_bg" />
+        <ImageView
+            android:id="@+id/plus_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/item"
+            android:layout_toRightOf="@+id/number"
+            android:background="@drawable/plus_btn" />
+        
+        <ImageView
+            android:id="@+id/cross_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:layout_below="@+id/item"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/plus_btn"
+            android:background="@drawable/multiple" />
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/item"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:layout_toRightOf="@+id/plus_btn"
+            android:text="@string/Rs"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/add_extra"
+            android:text="@string/Rs" 
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:textSize="12dp" />
+        
+
+</RelativeLayout>

@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_with_art">
+    
+    <TextView
+        android:id="@+id/fetching_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Fetching location..."
+        android:layout_above="@+id/or"
+        android:textSize="10dp"
+        android:textColor="#393939">
+    </TextView>
+    
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:padding="12dp"
+        android:text="OR"
+        android:textSize="17dp"
+        android:textColor="#393939">
+    </TextView>
+    
+    <Button
+        android:id="@+id/type_your_location_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/or"
+        android:text="Type your location"
+        android:textColor="#FFFFFF"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/type_your_location_bg">
+    </Button>
+    
+
+</RelativeLayout>

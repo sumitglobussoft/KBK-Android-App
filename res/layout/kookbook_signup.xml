@@ -1,0 +1,152 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_with_art" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/top_transparentbg" >
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="SIGNUP"
+            android:textColor="#FFFFFF" />
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/signup_close_btn" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/signupWithFb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/signupWithGplus"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:src="@drawable/fb_signup" >
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/signupWithGplus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/line"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/gpluse_signup" >
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/name"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/orsignup_using_email" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="223dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/name_bg"
+        android:hint="Name"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:paddingLeft="40dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="12sp" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="223dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="1dp"
+        android:background="@drawable/email_bg"
+        android:imeOptions="actionNext"
+        android:hint="Email"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:inputType="text"
+        android:paddingLeft="40dp"
+        android:textSize="12sp" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="223dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/password_bg"
+        android:hint="Password"
+        android:imeOptions="actionNext"
+        android:inputType="textPassword"
+        android:textColor="#FFFFFF"
+        android:paddingLeft="40dp"
+        android:textColorHint="#FFFFFF"
+        android:textSize="12sp" >
+    </EditText>
+
+    <ImageView
+        android:id="@+id/signUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="7dp"
+        android:src="@drawable/signup_imgbtn" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signUp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:text="Already have an account?"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#393939"
+        android:textSize="13dp" />
+
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_transparentbg" >
+
+        <TextView
+        android:id="@+id/bottomtext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:textSize="8sp"
+        android:text="By creating an account, you agree to Kookbooks&apos;s Terms of Service, Privacy Policy and Content Policies."
+        android:textColor="#FFFFFF" />
+    </RelativeLayout>
+
+</RelativeLayout>

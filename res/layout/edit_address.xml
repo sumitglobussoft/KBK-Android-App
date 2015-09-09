@@ -1,0 +1,189 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_with_art" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/kookbook_text_orrange"
+        android:padding="10dp" >
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/white_back_btn" />
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/back_btn"
+            android:layout_marginLeft="10dp"
+            android:text="Edit Address"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/White" />
+        <ImageView
+            android:id="@+id/delete_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_action_discard" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/neighborhood_rel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/neighborhood_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp"
+            android:text="NEIGHBORHOOD"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/neigborhood_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:layout_below="@+id/neighborhood_text"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:background="@drawable/rectangle_border"
+            android:textSize="15dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/address_rel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/neighborhood_rel"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/address_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:text="ADDRESS"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/eg_address_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/address_text"
+            android:layout_marginLeft="5dp"
+            android:text="e.g.locality,house no."
+            android:textColor="@color/kookbook_text_lite_gray" />
+        <EditText
+            android:id="@+id/address_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:layout_below="@+id/address_text"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:background="@drawable/rectangle_border"
+            android:textSize="15dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/nickname_rel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/address_rel"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/nickname_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:text="NICKNAME"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/eg_nickname_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/nickname_text"
+            android:layout_marginLeft="5dp"
+            android:text="e.g.Home,Work."
+            android:textColor="@color/kookbook_text_lite_gray" />
+        <EditText
+            android:id="@+id/nickname_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:layout_below="@+id/nickname_text"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:background="@drawable/rectangle_border"
+            android:textSize="15dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/instructions_rel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nickname_rel"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/instructions_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
+            android:text="INSTRUCTIONS"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/eg_instructions_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/instructions_text"
+            android:layout_marginLeft="5dp"
+            android:text="e.g.a nearby landmark"
+            android:textColor="@color/kookbook_text_lite_gray" />
+        <EditText
+            android:id="@+id/instructioins_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="5dp"
+            android:paddingLeft="10dp"
+            android:layout_below="@+id/instructions_text"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:background="@drawable/rectangle_border"
+            android:textSize="15dp"/>
+    </RelativeLayout>
+    
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="SAVE"
+        android:textSize="15dp"
+        android:textColor="@color/White"
+        android:background="@color/kookbook_bg_green"/>
+
+</RelativeLayout>

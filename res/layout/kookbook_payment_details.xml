@@ -1,0 +1,296 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_with_art" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/kookbook_text_orrange"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/white_back_btn" />
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/back_btn"
+            android:text="Payment Details"
+            android:textColor="@color/White" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Payment Options"
+            android:textColor="@color/kookbook_text_orrange"
+            android:textSize="13dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel1"
+        android:background="@color/kookbook_bg_lite_grey"
+        android:padding="10dp" >
+
+        <ImageView
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/select" />
+
+        <TextView
+            android:id="@+id/opton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/radio1"
+            android:text="Credit Card"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/tag1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/opton1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/radio1"
+            android:text="Add card on next step"
+            android:textColor="@color/kookbook_text_lite_gray"
+            android:textSize="10dp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/border"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel2"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/grey_divider" />
+
+    <RelativeLayout
+        android:id="@+id/rel3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/border"
+        android:background="@color/kookbook_bg_lite_grey"
+        android:padding="10dp"  >
+
+        <ImageView
+            android:id="@+id/radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/unselect" />
+
+        <TextView
+            android:id="@+id/opton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/radio2"
+            android:text="Debit Card"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/tag2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/opton2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/radio2"
+            android:text="Add card on next step"
+            android:textColor="@color/kookbook_text_lite_gray"
+            android:textSize="10dp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/border1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel3"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/grey_divider" />
+
+    <RelativeLayout
+        android:id="@+id/rel4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/border1"
+        android:background="@color/kookbook_bg_lite_grey"
+        android:padding="10dp" >
+
+        <ImageView
+            android:id="@+id/radio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/unselect" />
+        <TextView
+            android:id="@+id/opton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/radio3"
+            android:text="Net Banking"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:textSize="13dp" />
+
+        <EditText
+            android:id="@+id/vouche_code_edit_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/opton3"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/radio3"
+            android:background="@drawable/voucher_code_bg"
+            android:hint="Enter Your Voucher Code"
+            android:paddingLeft="15dp"
+            android:textSize="10dp" />
+
+        <ImageView
+            android:id="@+id/apply_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/opton3"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/vouche_code_edit_box"
+            android:background="@drawable/voucher_code_apply_btn" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel4"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Bill Summery"
+            android:textColor="@color/kookbook_text_orrange"
+            android:textSize="13dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel5"
+        android:background="@color/kookbook_bg_lite_grey"
+        android:padding="10dp"  >
+
+        <TextView
+            android:id="@+id/bill_ammount_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="Bill Ammount"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/bill_ammount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/Rs"
+            android:textColor="@color/kookbook_text_lite_gray"
+            android:textSize="13dp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/border2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel6"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/grey_divider" />
+
+    <RelativeLayout
+        android:id="@+id/rel7"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/border2"
+        android:background="@color/kookbook_bg_lite_grey"
+        android:padding="10dp"  >
+
+        <TextView
+            android:id="@+id/total_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="Total"
+            android:textColor="@color/kookbook_text_dark_gray"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/total_ammount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="@string/Rs"
+            android:textColor="@color/kookbook_text_lite_gray"
+            android:textSize="13dp" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/make_payment_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="15dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/make_payment">
+    </ImageView>
+    
+</RelativeLayout>

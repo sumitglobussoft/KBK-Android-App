@@ -1,0 +1,396 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_with_art" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/kookbook_text_orrange"
+        android:padding="15dp" >
+
+        <ImageView
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/white_back_btn" />
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/back_btn"
+            android:text="Delivery Details"
+            android:textColor="@color/White" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/deliveryscroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header" >
+
+        <RelativeLayout
+            android:id="@+id/mainrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout
+                android:id="@+id/rel1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/login_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/box_green_broder"
+                    android:gravity="center"
+                    android:text="Already a kookbook member? Login here"
+                    android:textColor="@color/kookbook_text_green"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/login_box"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:text="Personal Details"
+                    android:textColor="@color/kookbook_text_orrange"
+                    android:textSize="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel1"
+                android:background="@color/kookbook_bg_lite_grey"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/name1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="Swara"
+                    android:textColor="@color/kookbook_text_dark_gray"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:id="@+id/edit_img1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/green_edit_icon" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/border"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel2"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/grey_divider" />
+
+            <RelativeLayout
+                android:id="@+id/rel3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/border"
+                android:background="@color/kookbook_bg_lite_grey"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/contact_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:inputType="number"
+                    android:text="9876543210"
+                    android:textColor="@color/kookbook_text_dark_gray"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:id="@+id/edit_contact_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/green_edit_icon" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel3"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="I Want Delivery at"
+                    android:textColor="@color/kookbook_text_orrange"
+                    android:textSize="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel4"
+                android:background="@color/kookbook_bg_lite_grey"
+                android:padding="10dp" >
+
+                <ImageView
+                    android:id="@+id/radio1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/unselect" />
+
+                <TextView
+                    android:id="@+id/opton1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/radio1"
+                    android:text="ASAP"
+                    android:textColor="@color/kookbook_text_dark_gray"
+                    android:textSize="12dp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/border1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel5"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/grey_divider" />
+
+            <RelativeLayout
+                android:id="@+id/rel6"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/border1"
+                android:background="@color/kookbook_bg_lite_grey"
+                android:padding="10dp" >
+
+                <ImageView
+                    android:id="@+id/radio2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/unselect" />
+
+                <TextView
+                    android:id="@+id/opton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/radio2"
+                    android:text="Later"
+                    android:textColor="@color/kookbook_text_dark_gray"
+                    android:textSize="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel7"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel6"
+                android:background="@drawable/grey_bg"
+                android:padding="15dp"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/sel_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="Select date..."
+                    android:textColor="@color/kookbook_text_orrange"
+                    android:textSize="10dp" />
+
+                <ImageView
+                    android:id="@+id/date_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/grey_arrow" />
+
+                <ImageView
+                    android:id="@+id/border2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:src="@drawable/grey_divider" />
+
+                <TextView
+                    android:id="@+id/sel_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/border2"
+                    android:layout_margin="20dp"
+                    android:text="Select time..."
+                    android:textColor="@color/kookbook_text_orrange"
+                    android:textSize="10dp" />
+
+                <ImageView
+                    android:id="@+id/time_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/border2"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/grey_arrow" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel8"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel7"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/title3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Delivery Details"
+                    android:textColor="@color/kookbook_text_orrange"
+                    android:textSize="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel9"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel8"
+                android:background="@color/kookbook_bg_lite_grey"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="Swara"
+                    android:textColor="@color/kookbook_text_dark_gray"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/name2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toLeftOf="@+id/change_btn"
+                    android:text="dssdf fcdgdgd dgfhfhf gfhfhjg gfhfhf gfgfghf dfgfhfh"
+                    android:textColor="@color/kookbook_text_lite_gray"
+                    android:textSize="11dp" />
+
+                <ImageView
+                    android:id="@+id/change_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/change_btn" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel10"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel9"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/title4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Delivery Instuctions"
+                    android:textColor="@color/kookbook_text_orrange"
+                    android:textSize="12dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rel11"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel10"
+                android:background="@color/kookbook_bg_lite_grey"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/desc"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:text="Anything the restaurant needs to know to get your food to you quicker. e.g. a nearby landmark."
+                    android:textColor="@color/kookbook_text_lite_gray"
+                    android:textSize="11dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bottom"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel11"
+                android:padding="10dp" >
+
+                <ImageView
+                    android:id="@+id/place_order_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:src="@drawable/place_an_order" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
