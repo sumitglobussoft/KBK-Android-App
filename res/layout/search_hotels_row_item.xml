@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_with_art" >
+    
+    <RelativeLayout
+        android:id="@+id/order_det_rel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" >
+        
+        <ImageView 
+            android:id="@+id/hotel_logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/default_image"/>
+        <RelativeLayout 
+            android:id="hotel_name_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/hotel_logo">
+            <ImageView
+                android:id="@+id/radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@drawable/circle" />
+            <TextView 
+                android:id="@+id/hotel_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/radio_button"
+                android:layout_marginLeft="5dp"
+                android:layout_centerVertical="true"
+                android:text="Swagat"
+                android:textSize="19dp"
+                android:textColor="@color/kookbook_text_dark_gray"
+                android:textStyle="bold"/>
+            <TextView 
+                android:id="@+id/hotel_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/hotel_name"
+                android:layout_marginLeft="5dp"
+                android:layout_alignBaseline="@+id/hotel_name"
+                android:text="Ghodbunder Road"
+                android:textColor="@color/kookbook_text_lite_gray"/>
+        </RelativeLayout>
+        <RelativeLayout 
+            android:id="hotel_address_rel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/hotel_logo">
+            <TextView
+                android:id="@+id/hotel_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Malwani, North Indian, Chinese" 
+                android:textColor="@color/kookbook_text_lite_gray"
+                android:textSize="11dp"/>
+            <TextView
+                android:id="@+id/cost_for_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hotel_address"
+                android:layout_marginTop="5dp"
+                android:layout_alignParentLeft="true"
+                android:text="Cost for two : 1000/-" 
+                android:textColor="@color/kookbook_text_lite_gray"
+                android:textSize="11dp"/>
+        </RelativeLayout>
+
+   </RelativeLayout>
+</RelativeLayout>
