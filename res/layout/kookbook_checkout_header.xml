@@ -81,6 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:gravity="center"
             android:text="Sorry, this restaurant does not accepts delivery orders below 500.00. Your current subtotal is 115.00."
             android:textColor="@color/White"
             android:textSize="7dp" />

@@ -1,21 +1,10 @@
 package com.kbk.mobile_app.Activities;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,7 +14,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
 import android.view.Gravity;
@@ -39,11 +27,10 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
-import com.kbk.Singleton.CONSTANT;
 import com.kbk.Singleton.Singleton;
 import com.kbk.mobile_app.R;
-import com.kbk.mobile_app.Activities.KookBook_SignUp_Activity.Register;
-import com.kbk.mobile_app.Utils.JSONParser;
+import com.kbk.mobile_app.Utils.KBKCallBack;
+import com.kbk.mobile_app.Utils.KBKPostRequest;
 
 public class KookBook_Login_Activity extends Activity 
 {
@@ -67,7 +54,7 @@ public class KookBook_Login_Activity extends Activity
 		SharedPreferences preferences = this.getSharedPreferences("KookBook", Context.MODE_PRIVATE);
 		editor1 = preferences.edit();
 
-		// initialize the layout item identity
+		// Initialize the layout item identity
 		login = (ImageView) findViewById(R.id.login);
 		email = (EditText) findViewById(R.id.email);
 		password = (EditText) findViewById(R.id.password);
@@ -131,7 +118,6 @@ public class KookBook_Login_Activity extends Activity
 						password.setError("Enter your password");
 					else {
 						Toast.makeText(getApplicationContext(), "Notnull", Toast.LENGTH_SHORT).show();
-						// password.setError("Enter Password");
 					}
 				}
 				return false;
@@ -147,12 +133,6 @@ public class KookBook_Login_Activity extends Activity
 			@Override
 			public void onClick(View v) {
 
-				// try {
-				// progressDialog.show();
-				// } catch (Exception e)
-				// {
-				// e.printStackTrace();
-				// }
 				c_password = password.getText().toString();
 				c_email = email.getText().toString();
 				// check whether email or password fields are empty or not
@@ -163,7 +143,6 @@ public class KookBook_Login_Activity extends Activity
 						@Override
 						public boolean onEditorAction(TextView arg0, int arg1,
 								KeyEvent arg2) {
-							// TODO Auto-generated method stub
 
 							if (arg1 == EditorInfo.IME_ACTION_NEXT) {
 								if (email.getText().toString().trim()
@@ -183,7 +162,6 @@ public class KookBook_Login_Activity extends Activity
 					email.setError("Enter your e-mail");
 
 				} else if (password.getText().toString().length() == 0) {
-					// password.setFocusableInTouchMode(true);
 
 					password.setOnEditorActionListener(new OnEditorActionListener() {
 
@@ -212,7 +190,7 @@ public class KookBook_Login_Activity extends Activity
 					boolean check = false;
 					check = validatInputs();
 					if (check) {
-						new SignIn().execute();
+						SignIn();
 					}
 				}
 
@@ -220,109 +198,105 @@ public class KookBook_Login_Activity extends Activity
 		});
 	}
 
-	public class SignIn extends AsyncTask<Void, Void, String> {
-
-		JSONObject jobject = null;
+	private void SignIn(){
+		
+		progressDialog = new ProgressDialog(KookBook_Login_Activity.this);
+		progressDialog.show();
+		
 		int responsecode = 0;
-		HttpResponse response;
-		HttpPost httpPost;
-
-		@Override
-		protected String doInBackground(Void... params) {
-			
-			
-			JSONParser jsonParser = new JSONParser();
-			
-			
-			
-			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-			Singleton.cur_email = c_email;
-			
-			JSONObject jsonObject = new JSONObject();
+		Map<String,String> valuemap=null;
+		
+		Singleton.cur_email = c_email;
+		JSONObject jsonObject = new JSONObject();
+		 
+		 try {
+			 jsonObject.put("user_email", c_email);
+			 jsonObject.put("user_password", c_password);
+			 System.out.println("JSOn of signin "+jsonObject.toString());
+			 valuemap  = new HashMap<String, String>();
+			 valuemap.put("data", jsonObject.toString());
 			 
-			 try {
-				 jsonObject.put("user_email", c_email);
-				 jsonObject.put("user_password", c_password);
-				 nameValuePairs.add(new BasicNameValuePair("data", jsonObject.toString()));
-				 
-			} catch (JSONException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-			 
-	        JSONObject Result=jsonParser.getJSONFromUrlByPost("http://www.appdemoz.com/kookbook/connector/customer/sign_in", nameValuePairs);
- 		    System.out.println(Result + "       resulttttttttttttttttttt    ");
-			return Result.toString();
+		} catch (JSONException e1) {
+			e1.printStackTrace();
 		}
+		 
+		 KBKPostRequest kbkPostRequest=new KBKPostRequest(KookBook_Login_Activity.this);
+		 kbkPostRequest.executeRequest("http://www.appdemoz.com/kookbook/connector/customer/sign_in",valuemap , new KBKCallBack(
+				 ) {
+			
+			@Override
+			public void onSuccess(JSONObject result) {
 
-		@Override
-		protected void onPostExecute(String result) {
-			super.onPostExecute(result);
-			if (null != progressDialog && progressDialog.isShowing()) {
-				try {
-					progressDialog.dismiss();
-					progressDialog = null;
+				if (null != progressDialog && progressDialog.isShowing()) {
+					try {
+						progressDialog.dismiss();
+						progressDialog = null;
 
-				} catch (Exception e) {
+					} catch (Exception e) {
+					}
 				}
-			}
-			try {
-				JSONObject jsonObject = new JSONObject(result);
-				System.out.println("result================>%%" + result);
+				try {
+					JSONObject jsonObject = result;
 
-				status = jsonObject.getString("status");
-				System.out.println("status================>" + status);
+					status = jsonObject.getString("status");
 
-				if (status.equals("SUCCESS")) {
-					
-					JSONArray jsonarray = null;
-					jsonarray = jsonObject.getJSONArray("data");
-					for (int i = 0; i < jsonarray.length(); i++) {
+					if (status.equals("SUCCESS")) {
+						
+						JSONArray jsonarray = null;
+						jsonarray = jsonObject.getJSONArray("data");
+						for (int i = 0; i < jsonarray.length(); i++) {
 
-						JSONObject objJson = jsonarray.getJSONObject(i);
+							JSONObject objJson = jsonarray.getJSONObject(i);
 
-					    Singleton.cur_email = objJson.getString("user_email");
-					    Singleton.cur_Name = objJson.getString("user_name");
-					    Singleton.cur_id = objJson.getString("user_id");
+						    Singleton.cur_email = objJson.getString("user_email");
+						    Singleton.cur_Name = objJson.getString("user_name");
+						    Singleton.cur_id = objJson.getString("user_id");
+						}
+
+						System.out.println("Email***" + Singleton.cur_email);
+						System.out.println("cur_Name***"
+								+ Singleton.cur_Name);
+						System.out.println("cur_id***"
+								+ Singleton.cur_id);
+
+						Toast t = Toast.makeText(getApplicationContext(),
+								"Login Successful", Toast.LENGTH_LONG);
+						t.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0,
+								0);
+						View view = t.getView();
+
+						t.show();
+
+						Intent in1 = new Intent(KookBook_Login_Activity.this,HomeActivity.class);
+						startActivity(in1);
+						KookBook_Login_Activity.this.finish();
+
+					} else if (status.equals("FAIL")) {
+
+						Toast toast = Toast.makeText(getApplicationContext(), "Invalid login or password", Toast.LENGTH_LONG);
+						toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+						View view = toast.getView();
+
+						toast.show();
 					}
 
-					System.out.println("Email***" + Singleton.cur_email);
-					System.out.println("cur_Name***"
-							+ Singleton.cur_Name);
-					System.out.println("cur_id***"
-							+ Singleton.cur_id);
-
-					Toast t = Toast.makeText(getApplicationContext(),
-							"Login Successful", Toast.LENGTH_LONG);
-					t.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0,
-							0);
-					View view = t.getView();
-
-					t.show();
-
-					Intent in1 = new Intent(KookBook_Login_Activity.this,HomeActivity.class);
-					startActivity(in1);
-					KookBook_Login_Activity.this.finish();
-
-				} else if (status.equals("FAIL")) {
-
-					Toast toast = Toast.makeText(getApplicationContext(), "Invalid login or password", Toast.LENGTH_LONG);
-					toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
-					View view = toast.getView();
-
-					toast.show();
+				} catch (JSONException e) {
+					e.printStackTrace();
 				}
 
-				// } else {
-				// // respone is failed
-				// }
-			} catch (JSONException e) {
-				e.printStackTrace();
+			
 			}
-
-		}
-
+			
+			@Override
+			public void onFailure(Exception exception) {
+				exception.printStackTrace();
+				Toast toast = Toast.makeText(getApplicationContext(), "Exception in Request", Toast.LENGTH_LONG);
+				toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+				View view = toast.getView();
+			}
+		});
 	}
+
 
 	private boolean validatInputs() {
 
@@ -335,14 +309,11 @@ public class KookBook_Login_Activity extends Activity
 				validId = true;
 
 			} else {
-				// CommonMethods.showMyToast(getActivity(),
-				// "Enter Valid Email-Id");
 				email.setError("Enter Valid Email-Id");
 				email.requestFocus();
 				return false;
 			}
 		} else {
-			// CommonMethods.showMyToast(getActivity(), "Enter Email-Id");
 			email.setError("Enter Email-Id");
 			email.requestFocus();
 			return false;

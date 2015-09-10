@@ -3,7 +3,9 @@ package com.kbk.mobile_app.Activities;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -24,6 +26,8 @@ import com.kbk.Singleton.Singleton;
 import com.kbk.mobile_app.R;
 import com.kbk.mobile_app.Utils.CommonMethods;
 import com.kbk.mobile_app.Utils.JSONParser;
+import com.kbk.mobile_app.Utils.KBKCallBack;
+import com.kbk.mobile_app.Utils.KBKPostRequest;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -136,7 +140,7 @@ public class Kookbook_ForgotPassword_Activity extends Activity
 					if (check)
 					{
 
-						new FrogetPwd().execute();
+						FrogetPwd();
 					}
 				}
 
@@ -144,87 +148,85 @@ public class Kookbook_ForgotPassword_Activity extends Activity
 		});
 	}
 
-	public class FrogetPwd extends AsyncTask<Void, Void, String> 
+	private void FrogetPwd () 
 	{
 
-		JSONParser jsonParser = new JSONParser();
-		JSONObject json;
-		HttpResponse response;
-		HttpPost httpPost;
-		ProgressDialog progressDialog;
-
-		@Override
-		protected String doInBackground(Void... params) 
-		{
-			JSONParser jsonParser = new JSONParser();
-		    List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
-		    Singleton.cur_email = c_email;
+		progressDialog = new ProgressDialog(Kookbook_ForgotPassword_Activity.this);
+		progressDialog.show();
 		
-		    JSONObject jsonObject = new JSONObject();
-		
-		    try {
-			    jsonObject.put("user_email", c_email);
-			    nameValuePairs.add(new BasicNameValuePair("data", jsonObject.toString()));
-			 
-		    } catch (JSONException e1) {
-			   e1.printStackTrace();
+		Map<String,String> valuemap=null;
+		Singleton.cur_email = c_email;
+		JSONObject jsonObject = new JSONObject();
+		 
+		try {
+			jsonObject.put("user_email", c_email);
+			System.out.println("JSOn of signin "+jsonObject.toString());
+			valuemap  = new HashMap<String, String>();
+			valuemap.put("data", jsonObject.toString());
+		} catch (JSONException e1) {
+			e1.printStackTrace();
 		}
-		JSONObject Result=jsonParser.getJSONFromUrlByPost("http://www.appdemoz.com/kookbook/connector/customer/forgot_password", nameValuePairs);
-		System.out.println(Result + " resulttttttttttttttttttt    ");
-		return Result.toString();}
-
-		@Override
-		protected void onPostExecute(String result)
+		KBKPostRequest kbkPostRequest=new KBKPostRequest(Kookbook_ForgotPassword_Activity.this);
+		kbkPostRequest.executeRequest("http://www.appdemoz.com/kookbook/connector/customer/forgot_password",valuemap , new KBKCallBack() 
 		{
-			try
-			{
-				if (result != null) 
-				{
-					JSONObject jsonObject = new JSONObject(result);
+			
+			@Override
+			public void onSuccess(JSONObject result) {
 
-					status = jsonObject.getString("status");
+				if (null != progressDialog && progressDialog.isShowing()) {
+					try {
+						progressDialog.dismiss();
+						progressDialog = null;
 
-					if (status.equals("SUCCESS")) 
+					} catch (Exception e) {
+					}
+				}
+				try {
+
+					if (result != null) 
 					{
-						CommonMethods.showMyToast(Kookbook_ForgotPassword_Activity.this,"You will recieve a Email soon, regarding your password");
-						Intent i = new Intent(Kookbook_ForgotPassword_Activity.this,KookBook_Login_Activity.class);
-						startActivity(i);
-						Kookbook_ForgotPassword_Activity.this.finish();
-					} else if (status.equals("FAIL")) 
+						JSONObject jsonObject = result;
+
+						status = jsonObject.getString("status");
+
+						if (status.equals("SUCCESS")) 
+						{
+							CommonMethods.showMyToast(Kookbook_ForgotPassword_Activity.this,"You will recieve a Email soon, regarding your password");
+							Intent i = new Intent(Kookbook_ForgotPassword_Activity.this,KookBook_Login_Activity.class);
+							startActivity(i);
+							Kookbook_ForgotPassword_Activity.this.finish();
+						} else if (status.equals("FAIL")) 
+						{
+							CommonMethods.showMyToast(Kookbook_ForgotPassword_Activity.this, "Customer is not exist");
+							Intent i = new Intent(Kookbook_ForgotPassword_Activity.this,StartScreen_Activity.class);
+							startActivity(i);
+							Kookbook_ForgotPassword_Activity.this.finish();
+						}
+					} else
 					{
-						CommonMethods.showMyToast(Kookbook_ForgotPassword_Activity.this, "Customer is not exist");
+						CommonMethods.showMyToast(Kookbook_ForgotPassword_Activity.this,"please try again later.....!");
 						Intent i = new Intent(Kookbook_ForgotPassword_Activity.this,StartScreen_Activity.class);
 						startActivity(i);
 						Kookbook_ForgotPassword_Activity.this.finish();
 					}
-				} else
-				{
-					CommonMethods.showMyToast(Kookbook_ForgotPassword_Activity.this,"please try again later.....!");
-					Intent i = new Intent(Kookbook_ForgotPassword_Activity.this,StartScreen_Activity.class);
-					startActivity(i);
-					Kookbook_ForgotPassword_Activity.this.finish();
+
+				
+				}catch (JSONException e) {
+					e.printStackTrace();
 				}
 
-			} catch (Exception e) {
-
+			
 			}
-			if (null != progressDialog && progressDialog.isShowing()) 
-			{
-
-				try {
-					progressDialog.dismiss();
-					progressDialog = null;
-
-				} catch (Exception e) {
-
-				}
-				// --------//
+			
+			@Override
+			public void onFailure(Exception exception) {
+				exception.printStackTrace();
+				Toast toast = Toast.makeText(getApplicationContext(), "Exception in Request", Toast.LENGTH_LONG);
+				toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+				View view = toast.getView();
 			}
-			super.onPostExecute(result);
-		}
-
+		});
 	}
-
 	private boolean validatInputs() 
 	{
 

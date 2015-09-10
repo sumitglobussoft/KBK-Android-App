@@ -2,26 +2,12 @@ package com.kbk.mobile_app.Activities;
 
 import java.util.ArrayList;
 
-import com.kbk.mobile_app.R;
-import com.kbk.mobile_app.Home_delivery.Fragment.Delivery_Details_Fragment;
-import com.kbk.mobile_app.Home_delivery.Fragment.Dummy_Fragment;
-import com.kbk.mobile_app.Home_delivery.Fragment.Frequently_Asked_Questions_Fragmnet;
-import com.kbk.mobile_app.Home_delivery.Fragment.KookBook_Number_Verification_Fragment;
-import com.kbk.mobile_app.Home_delivery.Fragment.KookBook_Order_Received_Fragment;
-import com.kbk.mobile_app.Home_delivery.Fragment.KookBook_SelectAddress_Fragment;
-import com.kbk.mobile_app.Home_delivery.Fragment.My_Address_Fragment;
-import com.kbk.mobile_app.Home_delivery.Fragment.My_Booking_Fragment;
-import com.kbk.mobile_app.Home_delivery.Fragment.Post_Orders_Fragment;
-import com.kbk.mobile_app.Home_delivery.Fragment.Settings_Fragment;
-import com.kbk.mobile_app.adapters.NavDrawerListAdapter;
-import com.kbk.mobile_app.models.NavDrawerItemModel;
-
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
@@ -36,8 +22,21 @@ import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.kbk.mobile_app.R;
+import com.kbk.mobile_app.Home_delivery.Fragment.Delivery_Details_Fragment;
+import com.kbk.mobile_app.Home_delivery.Fragment.Dummy_Fragment;
+import com.kbk.mobile_app.Home_delivery.Fragment.Frequently_Asked_Questions_Fragmnet;
+import com.kbk.mobile_app.Home_delivery.Fragment.KookBook_Number_Verification_Fragment;
+import com.kbk.mobile_app.Home_delivery.Fragment.KookBook_Order_Received_Fragment;
+import com.kbk.mobile_app.Home_delivery.Fragment.KookBook_SelectAddress_Fragment;
+import com.kbk.mobile_app.Home_delivery.Fragment.My_Address_Fragment;
+import com.kbk.mobile_app.Home_delivery.Fragment.My_Booking_Fragment;
+import com.kbk.mobile_app.Home_delivery.Fragment.Post_Orders_Fragment;
+import com.kbk.mobile_app.Home_delivery.Fragment.Settings_Fragment;
+import com.kbk.mobile_app.adapters.NavDrawerListAdapter;
+import com.kbk.mobile_app.models.NavDrawerItemModel;
 
 public class HomeActivity extends ActionBarActivity {
 	private DrawerLayout mDrawerLayout;
@@ -47,6 +46,8 @@ public class HomeActivity extends ActionBarActivity {
 
 	// nav drawer title
 	private CharSequence mDrawerTitle;
+
+	 RelativeLayout drawerViewlayout;
 
 	// used to store app title
 	private CharSequence mTitle;
@@ -59,14 +60,18 @@ public class HomeActivity extends ActionBarActivity {
 	private NavDrawerListAdapter adapter;
 	
 	public static FragmentManager fragmentmanager;
+	FrameLayout frameLayout;
 
 	ViewGroup headerRight;
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
+		
 		super.onCreate(savedInstanceState);
+		
 		setContentView(R.layout.home_activity);
 		
+		frameLayout = (FrameLayout) findViewById(R.id.container);
 		if(Edit_Address_Activity.isFromEditAddress){
 			fragmentmanager=getSupportFragmentManager();
 			
@@ -81,22 +86,19 @@ public class HomeActivity extends ActionBarActivity {
 		ftran.replace(R.id.container, new KookBook_Number_Verification_Fragment()).commit();
 		}
 		
+		
+
 //		mTitle = mDrawerTitle = getTitle();
 
 		// load slide menu items
 		navMenuTitles = getResources().getStringArray(R.array.nav_drawer_items);
 
 		// nav drawer icons from resources
-		navMenuIcons = getResources()
-				.obtainTypedArray(R.array.nav_drawer_icons);
-
+		navMenuIcons = getResources().obtainTypedArray(R.array.nav_drawer_icons);
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-
 		mDrawerList = (ListView) findViewById(R.id.list_slidermenu);
-
 		navDrawerItems = new ArrayList<NavDrawerItemModel>();
 
-		
 		navDrawerItems.add(new NavDrawerItemModel(navMenuTitles[0], navMenuIcons
 				.getResourceId(0, -1)));
 		navDrawerItems.add(new NavDrawerItemModel(navMenuTitles[1], navMenuIcons
@@ -124,7 +126,6 @@ public class HomeActivity extends ActionBarActivity {
 
 		// Recycle the typed array
 		navMenuIcons.recycle();
-
 		mDrawerList.setOnItemClickListener(new SlideMenuClickListener());
 
 		// setting the nav drawer list adapter
@@ -138,8 +139,16 @@ public class HomeActivity extends ActionBarActivity {
 
 		mDrawerList.setAdapter(adapter);
 
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+		getSupportActionBar().setHomeButtonEnabled(true);
+
+		getSupportActionBar().setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
+
+		getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.kookbook_text_orrange)));
+		
 		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-				R.drawable.rounded_icon, // nav menu toggle icon
+				R.drawable.white_back_btn, // nav menu toggle icon
 				R.string.app_name, // nav drawer open - description for
 									// accessibility
 				R.string.app_name // nav drawer close - description for
@@ -156,6 +165,14 @@ public class HomeActivity extends ActionBarActivity {
 				// calling onPrepareOptionsMenu() to hide action bar icons
 				invalidateOptionsMenu();
 			}
+			
+			@Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                super.onDrawerSlide(drawerView, slideOffset);
+                frameLayout.setTranslationX(slideOffset * drawerView.getWidth());
+                mDrawerLayout.bringChildToFront(drawerView);
+                mDrawerLayout.requestLayout();
+            }
 		};
 		mDrawerLayout.setDrawerListener(mDrawerToggle);
 
@@ -191,7 +208,8 @@ public class HomeActivity extends ActionBarActivity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
-
+	
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// toggle nav drawer on selecting action bar app icon/title
@@ -207,8 +225,10 @@ public class HomeActivity extends ActionBarActivity {
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+		
 	}
 
+	 
 	/***
 	 * Called when invalidateOptionsMenu() is triggered
 	 */
@@ -282,19 +302,20 @@ public class HomeActivity extends ActionBarActivity {
 			Log.e("MainActivity", "Error in creating fragment");
 		}
 	}
-
 	
+	 @Override
+	 protected void onPostCreate(Bundle savedInstanceState) {
+	  super.onPostCreate(savedInstanceState);
+	  // Sync the toggle state after onRestoreInstanceState has occurred.
+	  mDrawerToggle.syncState();
+	 }
 
-	@Override
-	protected void onPostCreate(Bundle savedInstanceState) {
-		super.onPostCreate(savedInstanceState);
-		mDrawerToggle.syncState();
-	}
+	 @Override
+	 public void onConfigurationChanged(Configuration newConfig) {
+	  super.onConfigurationChanged(newConfig);
+	  // Pass any configuration change to the drawer toggls
+	  mDrawerToggle.onConfigurationChanged(newConfig);
+	 }
 
-	@Override
-	public void onConfigurationChanged(Configuration newConfig) {
-		super.onConfigurationChanged(newConfig);
-		mDrawerToggle.onConfigurationChanged(newConfig);
-	}
 	
 }
