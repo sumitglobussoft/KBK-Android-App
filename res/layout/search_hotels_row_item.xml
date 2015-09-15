@@ -2,234 +2,186 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_with_art" >
+    android:background="@color/White" >
 
-    <RelativeLayout
-        android:id="@+id/order_det_rel"
-        android:layout_width="fill_parent"
+    <ImageView
+        android:id="@+id/hotel_logo"
+        android:layout_width="50dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/default_image" />
+
+    <TextView
+        android:id="@+id/hotel_type"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp" >
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/hotel_logo"
+        android:layout_marginLeft="5dp"
+        android:text="3 Star Hotel"
+        android:textColor="@color/kookbook_text_green"
+        android:textSize="8sp" />
 
-        <ImageView
-            android:id="@+id/hotel_logo"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_alignParentLeft="true"
-            android:src="@drawable/default_image" />
+    <ImageView
+        android:id="@+id/radio_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/hotel_logo"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/hotel_logo"
+        android:background="@drawable/circle" />
 
-        <TextView
-            android:id="@+id/hotel_type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/hotel_logo"
-            android:layout_marginTop="2dp"
-            android:text="3 Star Hotel"
-            android:textColor="@color/kookbook_text_green"
-            android:textSize="11dp" />
+    <TextView
+        android:id="@+id/hotel_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/hotel_logo"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/radio_button"
+        android:text="Swagat"
+        android:textColor="@color/kookbook_text_dark_gray"
+        android:textStyle="bold" />
 
-        <RelativeLayout
-            android:id="@+id/txt_rel"
-            android:layout_width="wrap_content"
-            android:layout_height="80dp"
-            android:layout_marginLeft="15dp"
-            android:layout_toRightOf="@+id/hotel_logo" >
+    <TextView
+        android:id="@+id/hotel_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/hotel_name"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/hotel_rating"
+        android:layout_toRightOf="@+id/hotel_name"
+        android:text="Ahmedabad"
+        android:textColor="@color/kookbook_text_lite_gray"
+        android:textSize="10sp" />
 
-            <RelativeLayout
-                android:id="@+id/hotel_name_rel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+    <TextView
+        android:id="@+id/hotel_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/radio_button"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/circle_with_color"
+        android:gravity="center"
+        android:padding="4sp"
+        android:text="4.0"
+        android:textColor="@color/White"
+        android:textSize="7sp"
+        android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/radio_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/circle" />
+    <TextView
+        android:id="@+id/hotel_dishes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radio_button"
+        android:layout_below="@+id/hotel_name"
+        android:text="Malwani, North Indian, Chinese"
+        android:textColor="@color/kookbook_text_lite_gray"
+        android:textSize="9sp" />
 
-                <TextView
-                    android:id="@+id/hotel_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
-                    android:layout_toRightOf="@+id/radio_button"
-                    android:text="Swagat"
-                    android:textColor="@color/kookbook_text_dark_gray"
-                    android:textSize="19dp"
-                    android:textStyle="bold" />
+    <TextView
+        android:id="@+id/cost_for_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/hotel_dishes"
+        android:layout_below="@+id/hotel_dishes"
+        android:layout_marginTop="3dp"
+        android:text="Cost for two : \u20B9 "
+        android:textColor="@color/kookbook_text_dark_gray"
+        android:textSize="8sp" />
 
-                <TextView
-                    android:id="@+id/hotel_location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBaseline="@+id/hotel_name"
-                    android:layout_marginLeft="5dp"
-                    android:layout_toRightOf="@+id/hotel_name"
-                    android:text="Ghodbunder Road"
-                    android:textColor="@color/kookbook_text_lite_gray" />
-                <TextView
-                    android:id="@+id/hotel_rating"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="5dp"
-                    android:text="4.0"
-                    android:textSize="12dp"
-                    android:padding="4dp"
-                    android:gravity="center"
-                    android:background="@drawable/circle_with_color"
-                    android:textColor="@color/White" />
-            </RelativeLayout>
+    <TextView
+        android:id="@+id/cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hotel_dishes"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/cost_for_two"
+        android:text=""
+        android:textColor="@color/kookbook_text_dark_gray"
+        android:textSize="8sp" />
 
-            <RelativeLayout
-                android:id="@+id/hotel_address_rel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_below="@+id/hotel_name_rel" >
+    <TextView
+        android:id="@+id/discount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/cost"
+        android:layout_alignBottom="@+id/cost"
+        android:layout_alignRight="@+id/hotel_rating"
+        android:text="10% Discount"
+        android:textColor="@color/kookbook_text_green"
+        android:textSize="8sp"
+        android:textStyle="italic" />
 
-                <TextView
-                    android:id="@+id/hotel_address"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:text="Malwani, North Indian, Chinese"
-                    android:textColor="@color/kookbook_text_lite_gray"
-                    android:textSize="11dp" />
-            </RelativeLayout>
-            <RelativeLayout 
-                android:id="@+id/cost_for_two_rel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_below="@+id/hotel_address_rel">
-                <TextView
-                    android:id="@+id/cost_for_two"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:text="Cost for two : \u20B9 1000/-"
-                    android:textColor="@color/kookbook_text_dark_gray"
-                    android:textSize="11dp" />
-                <TextView
-                    android:id="@+id/discount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="5dp"
-                    android:text="10% Discount"
-                    android:textStyle="italic"
-                    android:textColor="@color/kookbook_text_green"
-                    android:textSize="11dp" />
-                <ImageView
-                    android:id="@+id/vertical_divider"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@+id/discount"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/verticle_divider" />
-                
-                <TextView
-                    android:id="@+id/min_txt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentLeft="true"
-                    android:gravity="bottom"
-                    android:text="Min"
-                    android:textColor="@color/kookbook_text_orrange"
-                    android:textSize="11dp"
-                    android:textStyle="italic" />
-                 <TextView
-                    android:id="@+id/min_cost"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:gravity="bottom"
-                    android:layout_marginLeft="5dp"
-                    android:layout_toRightOf="@+id/min_txt"
-                    android:text="\u20B9 500/-"
-                    android:textStyle="italic"
-                    android:textColor="@color/kookbook_text_green"
-                    android:textSize="11dp" />
+    <TextView
+        android:id="@+id/no_of_deals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/discount"
+        android:layout_below="@+id/discount"
+        android:text="3 Deals"
+        android:textColor="@color/kookbook_text_orrange"
+        android:textSize="8sp"
+        android:textStyle="italic" />
 
-                 <ImageView
-                     android:id="@+id/time_img"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_alignTop="@+id/min_cost"
-                     android:layout_marginLeft="12dp"
-                     android:layout_marginTop="2dp"
-                     android:layout_toRightOf="@+id/min_cost"
-                     android:src="@drawable/time" />
-                 <TextView
-                    android:id="@+id/time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="5dp"
-                    android:layout_toRightOf="@+id/time_img"
-                    android:text="45m"
-                    android:textStyle="italic"
-                    android:textColor="@color/kookbook_text_green"
-                    android:textSize="11dp" />
-                 <TextView
-                    android:id="@+id/no_of_deals"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="5dp"
-                    android:layout_below="@+id/discount"
-                    android:text="3 Deals"
-                    android:textStyle="italic"
-                    android:textColor="@color/kookbook_text_orrange"
-                    android:textSize="11dp" />
-                
-            </RelativeLayout>
+    <ImageView
+        android:id="@+id/vertical_divider"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/discount"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/discount"
+        android:src="@drawable/verticle_divider" />
 
-            <!-- <RelativeLayout
-                android:id="@+id/min_rel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_below="@+id/cost_for_two_rel" >
+    <TextView
+        android:id="@+id/min_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cost_for_two"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/hotel_logo"
+        android:text="Min"
+        android:textColor="@color/kookbook_text_orrange"
+        android:textSize="8sp"
+        android:textStyle="italic" />
 
-                
-                <ImageView
-                    android:id="@+id/time_img"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@+id/min_cost"
-                    android:layout_marginBottom="2dp"
-                    android:src="@drawable/time" />
+    <TextView
+        android:id="@+id/min_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cost_for_two"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/min_txt"
+        android:text="\u20B9 500/-"
+        android:textColor="@color/kookbook_text_green"
+        android:textSize="8sp"
+        android:textStyle="italic" />
 
-                <TextView
-                    android:id="@+id/time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="5dp"
-                    android:layout_toRightOf="@+id/time_img"
-                    android:text="45m"
-                    android:textStyle="italic"
-                    android:textColor="@color/kookbook_text_green"
-                    android:textSize="11dp" />
-                <TextView
-                    android:id="@+id/no_of_deals"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="5dp"
-                    android:text="3 Deals"
-                    android:textStyle="italic"
-                    android:textColor="@color/kookbook_text_orrange"
-                    android:textSize="11dp" />
-            </RelativeLayout> -->
-        </RelativeLayout>
-    </RelativeLayout>
+    <ImageView
+        android:id="@+id/time_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/min_cost"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="1dp"
+        android:layout_toRightOf="@+id/min_cost"
+        android:src="@drawable/time" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/min_cost"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/time_img"
+        android:text="45m"
+        android:textColor="@color/kookbook_text_green"
+        android:textSize="8sp"
+        android:textStyle="italic" />
 
 </RelativeLayout>

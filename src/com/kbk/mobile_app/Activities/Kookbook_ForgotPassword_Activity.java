@@ -1,38 +1,16 @@
 package com.kbk.mobile_app.Activities;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import com.kbk.Singleton.CONSTANT;
-import com.kbk.Singleton.Singleton;
-import com.kbk.mobile_app.R;
-import com.kbk.mobile_app.Utils.CommonMethods;
-import com.kbk.mobile_app.Utils.JSONParser;
-import com.kbk.mobile_app.Utils.KBKCallBack;
-import com.kbk.mobile_app.Utils.KBKPostRequest;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -42,8 +20,14 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.TextView.OnEditorActionListener;
+import android.widget.Toast;
+
+import com.kbk.Singleton.Singleton;
+import com.kbk.mobile_app.R;
+import com.kbk.mobile_app.Utils.CommonMethods;
+import com.kbk.mobile_app.Utils.KBKCallBack;
+import com.kbk.mobile_app.Utils.KBKPostRequest;
 
 public class Kookbook_ForgotPassword_Activity extends Activity 
 {

@@ -10,6 +10,7 @@
     
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">
+        <item>Hotels</item>
         <item>My Bookings</item>
         <item>My Address</item>
         <item>Bookmarks</item>
@@ -27,6 +28,7 @@
      <!-- Nav Drawer List Item Icons -->
     <!-- Keep them in order as the titles are in -->
     <array name="nav_drawer_icons">
+        <item>@drawable/help</item>
         <item>@drawable/bookings</item>
         <item>@drawable/addresses</item>
         <item>@drawable/bookmark</item>
@@ -43,4 +45,6 @@
 
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
+    
+    <string name="server_client_id">507650438067-uenrgmqm46gpa4k6euro7svomogut3ub.apps.googleusercontent.com</string>
 </resources>

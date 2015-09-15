@@ -28,7 +28,7 @@ public class KBKPostRequest {
 	KBKCallBack vcunnectCallBack;
 
 	private String tag_json_obj = "jobj_req";
-	
+
 	Context activity;
 
 	public KBKPostRequest(Context activity) {
@@ -37,38 +37,40 @@ public class KBKPostRequest {
 	}
 
 	public void executeRequest(String url,
-			 final java.util.Map<String,String> nameValuePair,
+			final java.util.Map<String, String> nameValuePair,
 			final KBKCallBack vcunnectCallBack) {
 
 		this.vcunnectCallBack = vcunnectCallBack;
 
 		RequestQueue queue = Volley.newRequestQueue(activity);
-		StringRequest sr = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-			@Override
-			public void onResponse(String response) {
-				JSONObject jsonObject;
-				try {
-					jsonObject = new JSONObject(response);
-					vcunnectCallBack.onSuccess(jsonObject);
-				} catch (JSONException e) {
-					vcunnectCallBack.onFailure(e);
-				}
-			}
-		},new Response.ErrorListener() {
-			@Override
-			public void onErrorResponse(VolleyError error) {
-				vcunnectCallBack.onFailure(error);
-			}
-		}){
-			protected java.util.Map<String,String> getParams() throws AuthFailureError {
-	            return nameValuePair;
+
+		StringRequest sr = new StringRequest(Request.Method.POST, url,
+				new Response.Listener<String>() {
+					@Override
+					public void onResponse(String response) {
+						JSONObject jsonObject;
+						try {
+							jsonObject = new JSONObject(response);
+							vcunnectCallBack.onSuccess(jsonObject);
+						} catch (JSONException e) {
+							vcunnectCallBack.onFailure(e);
+						}
+					}
+				}, new Response.ErrorListener() {
+					@Override
+					public void onErrorResponse(VolleyError error) {
+						vcunnectCallBack.onFailure(error);
+					}
+				}) {
+			protected java.util.Map<String, String> getParams()
+					throws AuthFailureError {
+				return nameValuePair;
 			};
 		};
-		sr.setRetryPolicy((RetryPolicy) new DefaultRetryPolicy(
-                2500, 
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES, 
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));   
-		
+		sr.setRetryPolicy((RetryPolicy) new DefaultRetryPolicy(2500,
+				DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+				DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
 		queue.add(sr);
 
 	}
@@ -91,6 +93,5 @@ public class KBKPostRequest {
 		}
 		return false;
 	}
-	
-	
+
 }

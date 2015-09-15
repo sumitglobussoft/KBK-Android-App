@@ -1,16 +1,10 @@
 package com.kbk.mobile_app.Activities;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -19,7 +13,6 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.PasswordTransformationMethod;
@@ -36,7 +29,6 @@ import android.widget.Toast;
 
 import com.kbk.Singleton.Singleton;
 import com.kbk.mobile_app.R;
-import com.kbk.mobile_app.Utils.JSONParser;
 import com.kbk.mobile_app.Utils.KBKCallBack;
 import com.kbk.mobile_app.Utils.KBKPostRequest;
 

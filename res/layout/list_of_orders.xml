@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/white_back_btn" />
+            android:src="@drawable/white_back_btn" />
 
         <TextView
             android:id="@+id/heading"
@@ -27,6 +27,22 @@
             android:layout_marginLeft="10dp"
             android:text="Order Status"
             android:textColor="@color/White" />
+        <ImageView
+            android:id="@+id/search_btn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_toLeftOf="@+id/filter_btn"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/search_icon" />
+        
+        <ImageView
+            android:id="@+id/filter_btn"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/fliter_icon" />
     </RelativeLayout>
     
     <ListView
@@ -35,7 +51,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/header"
         android:layout_alignParentLeft="true"
-        android:divider="@drawable/big_border"
-        android:dividerHeight="1dp">
+        android:padding="2dp"
+        android:divider="@color/kookbook_text_orrange"
+        android:dividerHeight="0.25dp">
     </ListView>
 </RelativeLayout>

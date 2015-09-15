@@ -1,5 +1,6 @@
 package com.kbk.mobile_app.Activities;
 
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -27,6 +28,7 @@ import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.kbk.Singleton.Singleton;
 import com.kbk.mobile_app.R;
 import com.kbk.mobile_app.Utils.KBKCallBack;
@@ -39,8 +41,14 @@ public class KookBook_Login_Activity extends Activity
 	SharedPreferences.Editor editor, editor1;
 	public ImageView close, login;
 	public TextView forgotPassword;
-	public String status, message, c_password, c_email;
+	public String status, message, c_password, c_email,id;
 	ProgressDialog progressDialog;
+	
+	/* Request code used to invoke sign in user interactions. */
+	private static final int RC_SIGN_IN = 0;
+
+	/* Client used to interact with Google APIs. */
+	private GoogleApiClient mGoogleApiClient;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -196,6 +204,7 @@ public class KookBook_Login_Activity extends Activity
 
 			}
 		});
+		
 	}
 
 	private void SignIn(){
@@ -253,11 +262,11 @@ public class KookBook_Login_Activity extends Activity
 						    Singleton.cur_id = objJson.getString("user_id");
 						}
 
-						System.out.println("Email***" + Singleton.cur_email);
-						System.out.println("cur_Name***"
-								+ Singleton.cur_Name);
-						System.out.println("cur_id***"
-								+ Singleton.cur_id);
+						editor1.putBoolean("login_status", true); /*("login_status", id);*/
+						editor1.putString("cur_uid", id);
+						editor1.putString("cur_email", c_email);
+						editor1.putString("cur_pwd", c_password);
+						editor1.commit();
 
 						Toast t = Toast.makeText(getApplicationContext(),
 								"Login Successful", Toast.LENGTH_LONG);
@@ -330,4 +339,5 @@ public class KookBook_Login_Activity extends Activity
 		Matcher matcher = pattern.matcher(email);
 		return matcher.matches();
 	}
+
 }
