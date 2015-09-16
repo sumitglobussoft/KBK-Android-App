@@ -128,7 +128,7 @@ public class HomeActivity extends ActionBarActivity
 		}
 
 		System.out.println("Before city");
-		FindCity();
+//		FindCity();
 
 		// mTitle = mDrawerTitle = getTitle();
 

@@ -25,7 +25,7 @@
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/back_btn"
             android:layout_marginLeft="10dp"
-            android:text="Order Status"
+            android:text=""
             android:textColor="@color/White" />
         <ImageView
             android:id="@+id/search_btn"
@@ -45,7 +45,7 @@
             android:src="@drawable/fliter_icon" />
     </RelativeLayout>
     
-    <ListView
+   <ListView
         android:id="@+id/orderList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,4 +55,16 @@
         android:divider="@color/kookbook_text_orrange"
         android:dividerHeight="0.25dp">
     </ListView>
+
+   <TextView
+       android:id="@+id/hotels_not_found"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+       android:layout_centerVertical="true"
+       android:visibility="gone"
+       android:text="No Hotels Found" 
+       android:textColor="@color/kookbook_text_dark_gray"
+       android:textStyle="bold"/>
+
 </RelativeLayout>
