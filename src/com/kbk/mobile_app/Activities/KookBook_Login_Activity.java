@@ -1,7 +1,9 @@
 package com.kbk.mobile_app.Activities;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -275,10 +277,11 @@ public class KookBook_Login_Activity extends Activity
 						View view = t.getView();
 
 						t.show();
+						FindCity();
 
-						Intent in1 = new Intent(KookBook_Login_Activity.this,HomeActivity.class);
-						startActivity(in1);
-						KookBook_Login_Activity.this.finish();
+//						Intent in1 = new Intent(KookBook_Login_Activity.this,HomeActivity.class);
+//						startActivity(in1);
+//						KookBook_Login_Activity.this.finish();
 
 					} else if (status.equals("FAIL")) {
 
@@ -304,6 +307,96 @@ public class KookBook_Login_Activity extends Activity
 				View view = toast.getView();
 			}
 		});
+	}
+	
+	private void FindCity()
+	{
+
+		progressDialog = new ProgressDialog(KookBook_Login_Activity.this);
+		progressDialog.show();
+
+		int responsecode = 0;
+		Map<String, String> valuemap = null;
+
+		KBKPostRequest kbkPostRequest = new KBKPostRequest(KookBook_Login_Activity.this);
+		kbkPostRequest.executeRequest("http://www.appdemoz.com/kookbook/connector/config/get_all_cities", valuemap, new KBKCallBack() 
+		{
+
+							@Override
+							public void onSuccess(JSONObject result)
+							{
+
+								if (null != progressDialog && progressDialog.isShowing()) {
+									try 
+									{
+										progressDialog.dismiss();
+										progressDialog = null;
+
+									} catch (Exception e) {
+									}
+								}
+								try
+								{
+									JSONObject jsonObject = result;
+									status = jsonObject.getString("status");
+									System.out.println("Status :" + status);
+
+									if (status.equals("SUCCESS"))
+									{
+
+										JSONObject jsonarray = null;
+										jsonarray = jsonObject.getJSONObject("data");
+										System.out.println("jsonarray**********" + jsonarray);
+
+										ArrayList<String> cities = new ArrayList<String>();
+										Map<String, String> map = new HashMap<String, String>();
+										Iterator iter = jsonarray.keys();
+										while (iter.hasNext())
+										{
+											try 
+											{
+												String city_id = (String) iter.next();
+												String city = jsonarray.getString(city_id);
+												if (city.equals(Singleton.Cityname)) 
+												{
+													Intent in1 = new Intent(KookBook_Login_Activity.this,HomeActivity.class);
+													startActivity(in1);
+													KookBook_Login_Activity.this.finish();
+													break;
+												}else{
+													Toast toast = Toast.makeText(getApplicationContext(), "Unable to find location, please type location", Toast.LENGTH_LONG);
+													toast.setGravity(Gravity.CENTER | Gravity.CENTER_HORIZONTAL, 0, 0);
+													View view = toast.getView();
+													Intent in1 = new Intent(KookBook_Login_Activity.this,TypeLocation_Activity.class);
+													startActivity(in1);
+													KookBook_Login_Activity.this.finish();
+												}
+											} catch (JSONException e) {
+												// Something went wrong!
+											}
+										}
+
+									}
+
+								} catch (JSONException e) {
+									e.printStackTrace();
+								}
+
+							}
+
+							@Override
+							public void onFailure(Exception exception) 
+							{
+								exception.printStackTrace();
+								Toast toast = Toast.makeText(
+										getApplicationContext(),
+										"Exception in Request",
+										Toast.LENGTH_LONG);
+								toast.setGravity(Gravity.CENTER
+										| Gravity.CENTER_HORIZONTAL, 0, 0);
+								View view = toast.getView();
+							}
+						});
 	}
 
 

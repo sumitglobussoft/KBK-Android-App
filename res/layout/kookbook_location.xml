@@ -53,18 +53,17 @@
             android:layout_marginLeft="5dp"
             android:background="@drawable/use_my_location" />
 
-        <EditText
+        <TextView
             android:id="@+id/UseMyLocation"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/Mylocation_icon"
-            android:hint="Use my location"
-            android:textColorHint="#696969"
+            android:text="Use my location"
+            android:textColor="#696969"
             android:background="@drawable/textfield_search_right_default_holo_light"
-            android:textSize="15dp"
-            android:textColor="@android:color/black" />
+            android:textSize="15dp" />
 
         
     </RelativeLayout>
@@ -87,18 +86,17 @@
             android:layout_marginLeft="5dp"
             android:background="@drawable/ghodbunder" />
 
-        <EditText
+        <TextView
             android:id="@+id/Ghodbunder_Rd"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/ghodbunder_icon"
-            android:hint="Ghodbunder Rd"
-            android:textColorHint="#696969"
+            android:text="Ghodbunder Rd"
+            android:textColor="#696969"
             android:background="@drawable/textfield_search_right_default_holo_light"
-            android:textSize="15dp"
-            android:textColor="@android:color/black" />
+            android:textSize="15dp" />
 
         
     </RelativeLayout>
